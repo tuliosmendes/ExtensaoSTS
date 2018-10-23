@@ -13,7 +13,7 @@ public class AtividadeService {
 	private AtividadeRepository repositorio;
 
 	public Atividade buscar(Integer id) {
-		Atividade atividade = repositorio.getOne(id);
+		Atividade atividade = repositorio.findById(id).get();
 		return atividade;
 	}
 }
