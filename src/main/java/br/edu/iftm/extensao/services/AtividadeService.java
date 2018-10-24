@@ -12,8 +12,17 @@ public class AtividadeService {
 	@Autowired
 	private AtividadeRepository repositorio;
 
-	public Atividade buscar(Integer id) {
+	public Atividade buscarPorId(Integer id) {
 		Atividade atividade = repositorio.findById(id).get();
 		return atividade;
+	}
+	
+	public void deleteById(Integer id) {
+		repositorio.deleteById(id);
+	}
+	
+	public Atividade salvar(Atividade atividade) {
+		Atividade a = repositorio.save(atividade);
+		return a;
 	}
 }
